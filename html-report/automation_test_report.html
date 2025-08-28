@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automation Test Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        .error { color: orange; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Automation Test Report</h1>
+    <table>
+        <tr>
+            <th>Test Case</th>
+            <th>Result</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Unix Job Status</td>
+            <td class="pass">Pass</td>
+            <td>All main and child jobs succeeded.</td>
+        </tr>
+        <tr>
+            <td>AAS0 Table Date Validation</td>
+            <td class="pass">Pass</td>
+            <td>All records have DATE_TABLE = 08-08-25.</td>
+        </tr>
+        <tr>
+            <td>AAS1 Table Date Validation</td>
+            <td class="pass">Pass</td>
+            <td>All records have DATE_TABLE = 08-08-25.</td>
+        </tr>
+        <tr>
+            <td>AAS2 Table Date Validation</td>
+            <td class="fail">Fail</td>
+            <td>DATE_TABLE = 12-12-20 (expected 08-08-25).</td>
+        </tr>
+        <tr>
+            <td>AA_DMSI_FEED_DETAILS Status Flag</td>
+            <td class="error">Error</td>
+            <td>SQL Error: ORA-00904: "STATUS_FLAG": invalid identifier.</td>
+        </tr>
+    </table>
+    <p>Report generated on August 28, 2025.</p>
+</body>
+</html>

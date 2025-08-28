@@ -1,0 +1,19 @@
+User Story: Automation of Data Validation and Job Status Monitoring
+
+As a data operations engineer,
+I want to automate the validation of job statuses and data integrity across multiple tables and processes,
+So that I can ensure the reliability and correctness of the data pipeline without manual intervention.
+
+Acceptance Criteria:
+1. The system must establish a connection with the designated Unix server and verify that the brain component is operational by running the job_status_example.sh script. All main and child jobs should report a status of "Success".
+2. The system must validate that the DATE_TABLE column in the AAS0, AAS1, and AAS2 tables contains the date "08-08-2025" for all records, ensuring data consistency across these tables.
+3. The system must check the AA_DMSI_FEED_DETAILS table for processed records and confirm that the status_flag for the columns FEED_to_S0, S0_to_S1, and S1_to_S2 is set to 'Y' for File_name = file1, indicating successful processing at each stage.
+
+Detailed Description:
+- The automation should connect to the Unix server and navigate to the specified path (/home/kiranmote) to execute the job status script. The results should be parsed to confirm that all jobs have completed successfully.
+- For each table (AAS0, AAS1, AAS2), the automation should query the DATE_TABLE column and verify that every record matches the expected date (08-08-2025). Any discrepancies should be flagged for review.
+- In the AA_DMSI_FEED_DETAILS table, the automation should filter for processed records with File_name = file1 and check that the status_flag for each relevant column is 'Y'. Any records not meeting this criterion should be reported.
+- The solution should provide a summary report of all validations, highlighting any failures or inconsistencies for prompt resolution.
+
+Business Value:
+Automating these checks will reduce manual effort, minimize errors, and ensure timely detection of issues in the data pipeline, leading to improved data quality and operational efficiency.

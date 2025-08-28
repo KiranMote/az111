@@ -1,0 +1,53 @@
+Test Case ID: TC_01
+Title: Verify the brain component is up and running
+Priority: 1
+Test Steps:
+  1. Establish connection with Unix server using SSH credentials from .env
+  2. Navigate to path: /home/kiranmote
+  3. Run script: job_status_example.sh to check the status of all main and child jobs
+Expected Result:
+  - All main and child job statuses should be "Success"
+
+---
+
+Test Case ID: TC_02
+Title: Verify the data in AAS0 table
+Priority: 1
+Test Steps:
+  1. Connect to Oracle database using SQLcl MCP
+  2. Query DATE_TABLE column in AAS0 table
+Expected Result:
+  - Date of all records should be 08-08-2025
+
+---
+
+Test Case ID: TC_03
+Title: Verify the data in AAS1 table
+Priority: 1
+Test Steps:
+  1. Connect to Oracle database using SQLcl MCP
+  2. Query DATE_TABLE column in AAS1 table
+Expected Result:
+  - Date of all records should be 08-08-2025
+
+---
+
+Test Case ID: TC_04
+Title: Verify the data in AAS2 table
+Priority: 1
+Test Steps:
+  1. Connect to Oracle database using SQLcl MCP
+  2. Query DATE_TABLE column in AAS2 table
+Expected Result:
+  - Date of all records should be 08-08-2025
+
+---
+
+Test Case ID: TC_05
+Title: Verify the status_flag in AA_DMSI_FEED_DETAILS table
+Priority: 1
+Test Steps:
+  1. Connect to Oracle database using SQLcl MCP
+  2. Query status_flag for columns FEED_to_S0, S0_to_S1, S1_to_S2 in AA_DMSI_FEED_DETAILS table for File_name = file1
+Expected Result:
+  - For all columns (FEED_to_S0, S0_to_S1, S1_to_S2), the status_flag should be 'Y' for File_name = file1
